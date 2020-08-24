@@ -10,5 +10,5 @@ router.register('language', LanguageView)
 router.register('programmer', ProgrammerView)
 
 
-urlpatterns = [ path('', include(router.urls))
+urlpatterns = [ path('api/', include(router.urls))
 ]

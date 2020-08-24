@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .serializer import ParadigmSerializer, LanguageSerializer, ProgrammerSerializer
 from .models import Paradigm, Language, Programmers
 from rest_framework import viewsets, permissions
+from django.contrib.auth.views import LoginView
 # Create your views here.
 
 class ParadigmView(viewsets.ModelViewSet):
@@ -14,7 +15,6 @@ class LanguageView(viewsets.ModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    
 
 
 class ProgrammerView(viewsets.ModelViewSet):
